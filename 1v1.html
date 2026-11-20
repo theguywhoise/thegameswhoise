@@ -10,26 +10,30 @@
     html, body { width:100%; height:100%; margin:0; padding:0; overflow:hidden; background:#080b18; }
     .webgl-content, #gameContainer { position:fixed; inset:0; width:100vw; height:100vh; overflow:hidden; }
     #gameContainer canvas { max-width:100vw !important; max-height:100vh !important; }
-    #game-brand { position:fixed; z-index:10; inset:0; display:grid; place-items:center; background:#080b18; pointer-events:none; transition:opacity .35s ease; }
-    #game-brand img { width:min(42vw, 240px); max-height:70vh; object-fit:contain; border-radius:14px; }
-    #game-brand.is-hidden { opacity:0; }
+    #game-brand { position:fixed; z-index:2147483647; inset:0; display:grid; place-items:center; background:#080b18; pointer-events:none; transition:opacity .35s ease; }
+    #game-brand img { display:block; width:min(42vw, 240px); max-height:70vh; object-fit:contain; border-radius:14px; }
+    #game-brand.is-hidden { opacity:0; visibility:hidden; }
   </style>
   <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/UnityProgress.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/2.7.js"></script>
 </head>
 <body>
   <div class="webgl-content"><div id="gameContainer"></div></div>
-  <div id="game-brand" aria-label="Loading 1v1.LOL"><img src="1v1-logo.svg" alt="1v1.LOL"></div>
+  <div id="game-brand" aria-label="Loading 1v1.LOL"><img src="./1v1-logo.svg" alt="1v1.LOL"></div>
   <script>
     let gameInstance;
     const loginQueue = [];
     let firebaseReady = false;
     let firebaseFailed = false;
 
-    // Unity can request sign-in before optional Firebase scripts finish loading.
-    // Keep the expected global available and replay requests once the SDK is ready.
+    // Guest play does not require Firebase and should still work if its CDN or
+    // project configuration is unavailable.
     function firebaseLoginProxy() {
       const args = Array.from(arguments);
+      if (args[0] === 'anonymous') {
+        if (typeof args[1] === 'function') args[1]({ token: '', displayName: 'guest' });
+        return;
+      }
       if (firebaseReady && typeof window._firebaseLoginImpl === 'function') {
         return window._firebaseLoginImpl.apply(window, args);
       }
@@ -87,7 +91,11 @@
           Module: {
             onRuntimeInitialized: function () {
               UnityProgress(gameInstance, 'complete');
-              document.getElementById('game-brand').classList.add('is-hidden');
+              // Leave the logo visible briefly so it appears even when the game
+              // initializes very quickly.
+              window.setTimeout(function () {
+                document.getElementById('game-brand').classList.add('is-hidden');
+              }, 900);
             }
           }
         }
