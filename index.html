@@ -7,63 +7,28 @@
   <meta name="description" content="thegameswhoise">
   <title>thegameswhoise</title>
   <link rel="icon" type="image/png" href="logo.png">
-  <link rel="shortcut icon" type="image/png" href="logo.png">
-  <link rel="apple-touch-icon" href="logo.png">
   <style>
     :root{color-scheme:dark;--bg:#080b18;--panel:#101529;--line:rgba(174,184,255,.12);--text:#f4f4ff;--muted:#989db8;--purple:#a98bff}
-    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:var(--bg);color:var(--text);font-family:system-ui,sans-serif;overflow-x:hidden}
-    body:before{content:"";position:fixed;inset:0;z-index:-2;background:radial-gradient(ellipse at 12% 9%,rgba(108,70,207,.23),transparent 35%),radial-gradient(ellipse at 92% 38%,rgba(39,146,184,.14),transparent 34%),radial-gradient(ellipse at 47% 100%,rgba(98,49,147,.2),transparent 38%),#080b18}
-    .stars,.stars:before,.stars:after{position:fixed;inset:0;content:"";pointer-events:none;z-index:-1;background-image:radial-gradient(1px 1px at 12% 18%,#fff 99%,transparent),radial-gradient(1px 1px at 32% 61%,#b5bcff 99%,transparent),radial-gradient(1px 1px at 67% 23%,#fff 99%,transparent),radial-gradient(1.5px 1.5px at 88% 73%,#d1c5ff 99%,transparent),radial-gradient(1px 1px at 76% 88%,#fff 99%,transparent),radial-gradient(1px 1px at 44% 34%,#b5bcff 99%,transparent);background-size:410px 360px;opacity:.5}.stars:before{background-position:120px 90px;background-size:530px 470px;opacity:.5}.stars:after{background-position:240px 30px;background-size:700px 620px;opacity:.35}
-    .wrap{width:min(1180px,calc(100% - 44px));margin:auto}header{height:78px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;position:relative;z-index:2;background:rgba(8,11,24,.55);backdrop-filter:blur(16px)}.brand{color:#f4f4ff;text-decoration:none;font-weight:800;font-size:20px}.hero{text-align:center;padding:70px 0 45px}.hero img{width:150px;height:150px;border-radius:50%;object-fit:cover;object-position:center;border:2px solid rgba(194,181,255,.42);box-shadow:0 0 35px rgba(109,229,237,.22),0 0 70px rgba(169,139,255,.16)}.hero h1{font-size:clamp(42px,6vw,76px);margin:20px 0}.hero p{color:#a7abc1}
-    .section-head{display:flex;justify-content:space-between;align-items:center}.toolbar{display:flex;gap:12px;margin:18px 0}.toolbar input,.toolbar select{background:#101529b8;color:#fff;border:1px solid var(--line);border-radius:9px;padding:11px}.toolbar input{flex:1}.games-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.slot{min-height:177px;padding:15px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(24,30,57,.83),rgba(14,18,35,.91));color:inherit;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.slot:hover{transform:translateY(-4px);border-color:#a894ffb0}.slot-top{display:flex;justify-content:space-between}.slot-icon{width:38px;height:38px;border:1px solid #ffffff13;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,#a488ff20,#70dfe710)}.slot-number,.slot-badge{color:#858aa2;font-size:10px}.slot-title{margin:0 0 5px;font-size:13px}.slot-caption{margin:0;color:#7f86a2;font-size:10px}.slot-badge{align-self:flex-end;border:1px solid #ffffff12;border-radius:6px;padding:5px 7px;margin-top:10px}.footer{border-top:1px solid #ffffff0d;margin-top:45px;padding:22px 0;color:#777e99;font-size:11px}.footer-inner{display:flex;justify-content:space-between}
+    *{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;min-height:100vh;background:radial-gradient(ellipse at 12% 9%,rgba(108,70,207,.23),transparent 35%),radial-gradient(ellipse at 92% 38%,rgba(39,146,184,.14),transparent 34%),#080b18;color:var(--text);font-family:system-ui,sans-serif;overflow-x:hidden}
+    .wrap{width:min(1180px,calc(100% - 44px));margin:auto}header{height:78px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;background:rgba(8,11,24,.55);backdrop-filter:blur(16px)}.brand{color:#f4f4ff;text-decoration:none;font-weight:800;font-size:20px}.hero{text-align:center;padding:70px 0 45px}.hero img{width:150px;height:150px;border-radius:50%;object-fit:cover;border:2px solid rgba(194,181,255,.42);box-shadow:0 0 35px rgba(109,229,237,.22),0 0 70px rgba(169,139,255,.16)}.hero h1{font-size:clamp(42px,6vw,76px);margin:20px 0}.hero p{color:#a7abc1}.section-head h2{margin-bottom:4px}.section-head p{color:var(--muted);margin-top:0}.toolbar{display:flex;gap:12px;margin:18px 0}.toolbar input,.toolbar select{background:#101529b8;color:#fff;border:1px solid var(--line);border-radius:9px;padding:11px}.toolbar input{flex:1}.games-grid{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:14px}.slot{min-height:177px;padding:15px;border:1px solid var(--line);border-radius:14px;background:linear-gradient(145deg,rgba(24,30,57,.83),rgba(14,18,35,.91));color:inherit;text-decoration:none;display:flex;flex-direction:column;justify-content:space-between;transition:.2s}.slot:hover{transform:translateY(-4px);border-color:#a894ffb0}.slot-top{display:flex;justify-content:space-between}.slot-icon{width:38px;height:38px;border:1px solid #ffffff13;border-radius:12px;display:grid;place-items:center;background:linear-gradient(140deg,#a488ff20,#70dfe710)}.slot-number,.slot-badge{color:#858aa2;font-size:10px}.slot-title{margin:0 0 5px;font-size:13px}.slot-caption{margin:0;color:#7f86a2;font-size:10px}.slot-badge{display:inline-block;border:1px solid #ffffff12;border-radius:6px;padding:5px 7px;margin-top:10px}.footer{border-top:1px solid #ffffff0d;margin-top:45px;padding:22px 0;color:#777e99;font-size:11px}.footer-inner{display:flex;justify-content:space-between}
     @media(max-width:900px){.games-grid{grid-template-columns:repeat(4,minmax(0,1fr))}}@media(max-width:650px){.wrap{width:min(100% - 30px,520px)}.games-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.hero{padding:50px 0 35px}.hero img{width:128px;height:128px}.toolbar{flex-direction:column}.footer-inner{flex-direction:column;gap:8px}}
   </style>
 </head>
 <body>
-  <div class="stars" aria-hidden="true"></div>
   <header><div class="wrap"><a class="brand" href="#home">✦ thegameswhoise</a></div></header>
   <main class="wrap" id="home">
-    <section class="hero">
-      <img src="logo.png" alt="thegameswhoise logo">
-      <h1>Thegameswhoise</h1>
-      <p>the self proclaimed best games site AND DONT YOU FORGET IT</p>
-    </section>
-    <section id="library">
-      <div class="section-head"><div><h2>Games</h2><p>40 games.</p></div></div>
-      <div class="toolbar">
-        <input id="game-search" type="search" placeholder="Search the galaxy..." aria-label="Search games">
-        <select id="sort-games" aria-label="Sort games"><option value="asc">Slot: low to high</option><option value="desc">Slot: high to low</option></select>
-      </div>
+    <section class="hero"><img src="logo.png" alt="thegameswhoise logo"><h1>Thegameswhoise</h1><p>the self proclaimed best games site AND DONT YOU FORGET IT</p></section>
+    <section id="library"><div class="section-head"><div><h2>Games</h2><p>40 games.</p></div></div>
+      <div class="toolbar"><input id="game-search" type="search" placeholder="Search the galaxy..." aria-label="Search games"><select id="sort-games" aria-label="Sort games"><option value="asc">Slot: low to high</option><option value="desc">Slot: high to low</option></select></div>
       <div class="games-grid" id="games-grid"></div>
     </section>
   </main>
   <footer class="footer"><div class="wrap footer-inner"><span>thegameswhoise</span><span>it says gullible on the ceiling ✦</span></div></footer>
   <script>
-    const games = Array.from({length:40}, (_, index) => ({
-      slot:index+1,
-      title:index===0?'1v1.LOL':index===1?'Minceraft fixed':`Open slot ${String(index+1).padStart(2,'0')}`,
-      description:index===0?'Battle it out':index===1?'Minecraft, fixed': 'A new world will go here',
-      icon:index===0?'⚔':index===1?'◆':['✧','◇','✦','⌁','⋆'][index%5],
-      url:index===0?'1v1.lol':index===1?'Minceraft fixed.html':null,
-      ready:index<2
-    }));
-    const grid=document.getElementById('games-grid');
-    const search=document.getElementById('game-search');
-    const sort=document.getElementById('sort-games');
-
-    function renderGames(){
-      const query=search.value.trim().toLowerCase();
-      const direction=sort.value==='asc'?1:-1;
-      const visible=games.filter(game=>`${game.title} ${game.description} ${game.slot}`.toLowerCase().includes(query)).sort((a,b)=>(a.slot-b.slot)*direction);
-      grid.innerHTML=visible.map(game=>`
-        <${game.ready?'a':'article'} class="slot" ${game.ready?`href="${game.url}"`:''} aria-label="${game.title}, game slot ${game.slot}">
-          <div class="slot-top"><span class="slot-icon">${game.icon}</span><span class="slot-number">SLOT ${String(game.slot).padStart(2,'0')}</span></div>
-          <div><h3 class="slot-title">${game.title}</h3><p class="slot-caption">${game.description}</p><span class="slot-badge">${game.ready?'PLAY':'COMING SOON'}</span></div>
-        </${game.ready?'a':'article'}>`).join('');
-    }
-    search.addEventListener('input',renderGames);
-    sort.addEventListener('change',renderGames);
-    renderGames();
+    const games=Array.from({length:40},(_,index)=>({slot:index+1,title:index===0?'1v1.LOL':index===1?'Minceraft fixed':`Open slot ${String(index+1).padStart(2,'0')}`,description:index===0?'Battle it out':index===1?'Minecraft, fixed':'A new world will go here',icon:index===0?'⚔':index===1?'◆':['✧','◇','✦','⌁','⋆'][index%5],id:index===0?'1v1':index===1?'minecraft':null,ready:index<2}));
+    const grid=document.getElementById('games-grid'),search=document.getElementById('game-search'),sort=document.getElementById('sort-games');
+    function renderGames(){const query=search.value.trim().toLowerCase(),direction=sort.value==='asc'?1:-1;const visible=games.filter(game=>`${game.title} ${game.description} ${game.slot}`.toLowerCase().includes(query)).sort((a,b)=>(a.slot-b.slot)*direction);grid.innerHTML=visible.map(game=>`<${game.ready?'a':'article'} class="slot" ${game.ready?`href="play.html?game=${game.id}" target="_blank" rel="noopener noreferrer"`:''} aria-label="${game.title}, game slot ${game.slot}"><div class="slot-top"><span class="slot-icon">${game.icon}</span><span class="slot-number">SLOT ${String(game.slot).padStart(2,'0')}</span></div><div><h3 class="slot-title">${game.title}</h3><p class="slot-caption">${game.description}</p><span class="slot-badge">${game.ready?'PLAY':'COMING SOON'}</span></div></${game.ready?'a':'article'}>`).join('')}
+    search.addEventListener('input',renderGames);sort.addEventListener('change',renderGames);renderGames();
   </script>
 </body>
 </html>
