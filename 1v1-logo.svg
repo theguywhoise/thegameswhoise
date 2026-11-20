@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" role="img" aria-labelledby="title desc">
+  <title id="title">1v1.LOL</title>
+  <desc id="desc">Blue 1v1.LOL fighter illustration on a dark blue background.</desc>
+  <defs>
+    <linearGradient id="bg" x2="0" y2="1"><stop stop-color="#171754"/><stop offset="1" stop-color="#090d31"/></linearGradient>
+    <linearGradient id="helmet" x2="1" y2="1"><stop stop-color="#25c9ff"/><stop offset=".52" stop-color="#0867ea"/><stop offset="1" stop-color="#092a9b"/></linearGradient>
+    <linearGradient id="armor" x2=".8" y2="1"><stop stop-color="#f5fbff"/><stop offset=".55" stop-color="#b9d8f6"/><stop offset="1" stop-color="#507ab7"/></linearGradient>
+    <linearGradient id="gun" x2="0" y2="1"><stop stop-color="#ffe078"/><stop offset="1" stop-color="#bd6519"/></linearGradient>
+    <filter id="shadow" x="-30%" y="-30%" width="160%" height="170%"><feGaussianBlur in="SourceAlpha" stdDeviation="5"/><feOffset dy="5"/><feComponentTransfer><feFuncA type="linear" slope=".65"/></feComponentTransfer><feMerge><feMergeNode/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+  </defs>
+  <rect width="400" height="500" rx="18" fill="url(#bg)"/>
+  <path d="M0 62 400 0v177L0 337z" fill="#28266e" opacity=".55"/>
+  <path d="m63 93 42 39-48-13 43 33-61-21 26-11z" fill="#ffb347" opacity=".8"/>
+  <g filter="url(#shadow)" stroke="#111632" stroke-width="12" stroke-linejoin="round" stroke-linecap="round">
+    <!-- legs and body -->
+    <path d="m151 299-21 76 48 18 42-69m24-21 47 61-30 41-65-54" fill="#17449c"/>
+    <path d="m129 367-26 54 74 9 23-38m70-4 35 41 43-19-47-58" fill="#111c56"/>
+    <path d="m152 195 102-17 43 111-45 54-116-24-30-70z" fill="url(#helmet)"/>
+    <path d="m148 211-47 15-38 62 35 34 59-53m98-56 58 16 54 58-28 37-69-30" fill="url(#armor)"/>
+    <path d="m190 254 62-18 50 61-29 63-93-16-26-52z" fill="#1764cb"/>
+    <!-- neck and helmet -->
+    <path d="m218 142 58 17-11 60-50 13-27-43z" fill="#11172d"/>
+    <path d="M176 111c-4-48 24-83 70-87 45-4 73 22 70 66l-8 71-52 45-61-30-24-31z" fill="url(#helmet)"/>
+    <path d="m254 126 43-26 24 6-7 32-56 42-28-9z" fill="#101329"/>
+    <ellipse cx="314" cy="112" rx="12" ry="18" fill="#f2f5fa" stroke="#111632" stroke-width="7"/>
+    <circle cx="318" cy="112" r="5" fill="#111632" stroke="none"/>
+    <!-- rifle and hands -->
+    <path d="m97 206 148 76 35-20-19-16-142-72z" fill="url(#gun)"/>
+    <path d="m87 199 41 16-9 24-39-16zm111 62 35 18-21 31-31-20" fill="#18234f"/>
+    <path d="m107 193 8-20 35 18-7 19m93 61 24-20 21 17-22 26" fill="#f5fbff"/>
+    <path d="m86 194-45-24 39 5-18-20 50 30" fill="#ffca50" stroke="none"/>
+  </g>
+  <g filter="url(#shadow)" font-family="Arial Black,Impact,sans-serif" font-weight="900" font-style="italic" text-anchor="middle">
+    <text x="151" y="449" font-size="91" fill="#fff" stroke="#080a17" stroke-width="16" paint-order="stroke">1v1</text>
+    <text x="151" y="449" font-size="91" fill="#fff">1v1</text>
+    <text x="293" y="448" font-size="40" fill="#fff" stroke="#080a17" stroke-width="10" paint-order="stroke">.LOL</text>
+    <text x="293" y="448" font-size="40" fill="#fff">.LOL</text>
+  </g>
+</svg>
