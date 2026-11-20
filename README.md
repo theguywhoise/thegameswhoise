@@ -1,3 +1,5 @@
+href="logo.png"
+
 # thegameswhoise
 
 the self proclaimed best games site AND DONT YOU FORGET IT
