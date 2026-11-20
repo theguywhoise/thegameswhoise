@@ -2,20 +2,41 @@
 <html lang="en">
 <head>
   <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
   <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
   <title>1v1.LOL</title>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/n-101-1/1@main/style.css">
+  <style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    .webgl-content,
+    #gameContainer {
+      position: fixed;
+      inset: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    #gameContainer canvas {
+      max-width: 100vw !important;
+      max-height: 100vh !important;
+    }
+  </style>
   <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/UnityProgress.js"></script>
   <script src="https://cdn.jsdelivr.net/gh/n-101-1/1@main/2.7.js"></script>
 </head>
 <body>
-  <div class="webgl-content"><div id="gameContainer" style="width:100%;height:100%;margin:auto"></div></div>
+  <div class="webgl-content"><div id="gameContainer"></div></div>
   <script>
     let gameInstance;
 
-    // Start as soon as the page markup is ready. Waiting for window.load also
-    // waits for every optional integration and image, delaying the large game download.
     document.addEventListener('DOMContentLoaded', function () {
       gameInstance = UnityLoader.instantiate(
         'gameContainer',
@@ -31,7 +52,6 @@
       );
     });
 
-    // Keep Unity's optional ad callbacks harmless when no ad provider is configured.
     function showAds() { console.log('show ads'); }
     function requestNewAd() { unityAdFinishedCallback(); }
     function unityAdFinishedCallback() {
