@@ -23,7 +23,7 @@
   </main>
   <footer class="footer"><div class="wrap footer-inner"><span>thegameswhoise</span><span>it says gullible on the ceiling ✦</span></div></footer>
   <script>
-    const games=Array.from({length:40},(_,index)=>({slot:index+1,title:index===0?'1v1.LOL':index===1?'Minceraft fixed':`Open slot ${String(index+1).padStart(2,'0')}`,description:index===0?'Battle game':index===1?'Minecraft adventure':'Waiting for a hero.',url:index===0?'1v1.html':index===1?'Minceraft fixed.html':'#'}));
+    const games=Array.from({length:40},(_,index)=>({slot:index+1,title:index===0?'1v1.LOL':index===1?'Minecraft':`Open slot ${String(index+1).padStart(2,'0')}`,description:index===0?'Battle game':index===1?'Minecraft adventure':'Waiting for a hero.',url:index===0?'1v1.html':index===1?'Minceraft fixed.html':'#'}));
     const grid=document.getElementById('games-grid'),search=document.getElementById('game-search'),sort=document.getElementById('sort-games');
     function renderGames(){const query=search.value.trim().toLowerCase(),direction=sort.value==='asc'?1:-1;const visible=games.filter(game=>`${game.title} ${game.description} ${game.slot}`.toLowerCase().includes(query)).sort((a,b)=>direction*a.title.localeCompare(b.title));grid.innerHTML=visible.map(game=>`<a class="game" href="${game.url}"><h3>${game.title}</h3><p>${game.description}</p><small>#${String(game.slot).padStart(2,'0')}</small></a>`).join('')}
     search.addEventListener('input',renderGames);sort.addEventListener('change',renderGames);renderGames();
