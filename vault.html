@@ -9,66 +9,25 @@
   <link rel="icon" type="image/png" href="logo.png">
   <style>
     :root{color-scheme:dark;--bg:#080b18;--panel:#101529;--line:rgba(174,184,255,.16);--text:#f4f4ff;--muted:#989db8;--purple:#a98bff}
-    *{box-sizing:border-box}
-    html,body{min-height:100%;margin:0}
-    body{min-height:100vh;padding:28px 20px 104px;background:radial-gradient(ellipse at 50% 0,rgba(108,70,207,.24),transparent 44%),var(--bg);color:var(--text);font:16px/1.5 system-ui,sans-serif}
-    .topbar{max-width:760px;margin:0 auto}
-    .topbar a{color:var(--muted);text-decoration:none}
-    .topbar a:hover{color:var(--text)}
-    main{width:min(100%,440px);margin:clamp(72px,16vh,150px) auto 0;padding:32px;border:1px solid var(--line);border-radius:20px;background:rgba(16,21,41,.88);box-shadow:0 24px 80px #0005;text-align:center}
-    .mark{display:grid;place-items:center;width:54px;height:54px;margin:0 auto 18px;border:1px solid var(--line);border-radius:16px;background:#a98bff18;color:var(--purple);font-size:25px}
-    h1{margin:0;font-size:clamp(30px,8vw,40px);letter-spacing:-.04em}
-    .intro{margin:10px 0 24px;color:var(--muted)}
-    label{display:block;margin-bottom:8px;text-align:left;font-size:14px;font-weight:650}
-    input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;outline:none;background:#080b18;color:var(--text);font:inherit}
-    input:focus{border-color:var(--purple);box-shadow:0 0 0 3px #a98bff24}
-    .status{min-height:24px;margin:12px 0 0;color:#ff9eae;font-size:14px}
-    #vault-content{margin-top:22px;padding:16px;border:1px solid var(--line);border-radius:12px;background:#080b18;text-align:left}
-    #vault-content[hidden]{display:none}
-    .bottom-action{position:fixed;right:0;bottom:0;left:0;padding:16px 20px max(16px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(8,11,24,.92);backdrop-filter:blur(12px)}
-    .bottom-action button{display:block;width:min(100%,440px);margin:0 auto;padding:14px 18px;border:0;border-radius:12px;background:linear-gradient(135deg,#a98bff,#8264ed);color:#100c20;font:700 16px system-ui,sans-serif;cursor:pointer}
-    .bottom-action button:hover{filter:brightness(1.08)}
-    .bottom-action button:focus-visible{outline:3px solid white;outline-offset:3px}
-    @media(max-width:480px){main{padding:26px 20px}}
+    *{box-sizing:border-box}html,body{min-height:100%;margin:0}body{min-height:100vh;background:radial-gradient(ellipse at 12% 9%,rgba(108,70,207,.23),transparent 35%),radial-gradient(ellipse at 88% 16%,rgba(59,95,180,.12),transparent 30%),var(--bg);color:var(--text);font:16px/1.5 Inter,"Segoe UI",system-ui,sans-serif}.wrap{width:min(900px,calc(100% - 40px));margin:auto}
+    header{height:78px;border-bottom:1px solid rgba(255,255,255,.07);display:flex;align-items:center;background:rgba(8,11,24,.55);backdrop-filter:blur(16px)}header .wrap{display:flex;align-items:center;justify-content:space-between}.brand{color:white;text-decoration:none;font-weight:800}.back-link{color:#cbd0e8;text-decoration:none;border:1px solid var(--line);padding:10px 14px;border-radius:12px;font-size:14px}.back-link:hover{background:rgba(169,139,255,.12)}
+    main{width:min(100% - 40px,520px);margin:clamp(65px,13vh,130px) auto 80px;padding:38px;border:1px solid var(--line);border-radius:22px;background:linear-gradient(145deg,rgba(20,25,48,.94),rgba(12,16,33,.94));box-shadow:0 24px 80px rgba(0,0,0,.32);text-align:center}.mark{display:grid;place-items:center;width:58px;height:58px;margin:0 auto 18px;border:1px solid var(--line);border-radius:18px;background:rgba(169,139,255,.12);color:var(--purple);font-size:26px}.eyebrow{margin:0 0 7px;color:var(--purple);font-weight:700;font-size:12px;letter-spacing:.14em;text-transform:uppercase}h1{margin:0;font-size:clamp(32px,8vw,42px);letter-spacing:-.04em}.intro{margin:10px 0 26px;color:var(--muted)}label{display:block;margin-bottom:8px;text-align:left;font-size:14px;font-weight:650}input{width:100%;padding:13px 14px;border:1px solid var(--line);border-radius:11px;outline:none;background:#080b18;color:var(--text);font:inherit}input:focus{border-color:var(--purple);box-shadow:0 0 0 3px rgba(169,139,255,.14)}.status{min-height:24px;margin:12px 0 0;color:#ff9eae;font-size:14px}#vault-content{margin-top:22px;padding:18px;border:1px solid var(--line);border-radius:14px;background:#080b18;text-align:left}#vault-content[hidden]{display:none}.bottom-action{position:fixed;right:0;bottom:0;left:0;padding:16px 20px max(16px,env(safe-area-inset-bottom));border-top:1px solid var(--line);background:rgba(8,11,24,.92);backdrop-filter:blur(16px)}.bottom-action button{display:block;width:min(100%,440px);margin:0 auto;padding:14px 18px;border:0;border-radius:12px;background:linear-gradient(135deg,#a98bff,#8264ed);color:#100c20;font:700 16px/1.2 inherit;cursor:pointer}.bottom-action button:hover{filter:brightness(1.08)}.bottom-action button:focus-visible,.back-link:focus-visible{outline:3px solid white;outline-offset:3px}
+    @media(max-width:520px){main{padding:28px 22px}.wrap{width:calc(100% - 30px)}}
   </style>
 </head>
 <body>
-  <div class="topbar"><a href="index.html">← Back to thegameswhoise</a></div>
+  <header><div class="wrap"><a class="brand" href="index.html">✦ thegameswhoise</a><a class="back-link" href="index.html">← Back home</a></div></header>
   <main>
-    <div class="mark" aria-hidden="true">✦</div>
-    <h1>The Vault</h1>
-    <p class="intro">Enter the password to unlock the vault.</p>
-    <form id="vault-form">
-      <label for="password">Password</label>
-      <input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="status">
-      <p class="status" id="status" role="status" aria-live="polite"></p>
-    </form>
-    <section id="vault-content" hidden tabindex="-1">
-      <strong>Vault unlocked ✨</strong>
-      <p>You’re in. Add your private vault content here.</p>
-    </section>
+    <div class="mark" aria-hidden="true">✦</div><p class="eyebrow">A hidden corner</p><h1>The Vault</h1><p class="intro">Enter the password to unlock the vault.</p>
+    <form id="vault-form"><label for="password">Password</label><input id="password" name="password" type="password" autocomplete="current-password" required aria-describedby="status"><p class="status" id="status" role="status" aria-live="polite"></p></form>
+    <section id="vault-content" hidden tabindex="-1"><strong>Vault unlocked ✨</strong><p>You’re in. Add your private vault content here.</p></section>
   </main>
   <div class="bottom-action"><button type="submit" form="vault-form">Unlock the vault</button></div>
   <script>
     // This is a simple client-side gate, not secure storage. Do not put sensitive data here.
-    const VAULT_PASSWORD = 'asd785f823hgg5h5g3hfhu*nsad***';
-    const form = document.getElementById('vault-form');
-    const input = document.getElementById('password');
-    const status = document.getElementById('status');
-    const content = document.getElementById('vault-content');
-
-    form.addEventListener('submit', event => {
-      event.preventDefault();
-      if (input.value === VAULT_PASSWORD) {
-        status.textContent = '';
-        content.hidden = false;
-        content.focus();
-      } else {
-        content.hidden = true;
-        status.textContent = 'That password didn’t work. Try again.';
-        input.select();
-      }
-    });
+    const VAULT_PASSWORD='asd785f823hgg5h5g3hfhu*nsad***';
+    const form=document.getElementById('vault-form'),input=document.getElementById('password'),status=document.getElementById('status'),content=document.getElementById('vault-content');
+    form.addEventListener('submit',event=>{event.preventDefault();if(input.value===VAULT_PASSWORD){status.textContent='';content.hidden=false;content.focus()}else{content.hidden=true;status.textContent='That password didn’t work. Try again.';input.select()}});
   </script>
 </body>
 </html>
